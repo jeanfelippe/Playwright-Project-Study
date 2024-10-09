@@ -34,15 +34,15 @@ public class LaunchBrowser {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-		double width = screenSize.getWidth();
-		double height = screenSize.getHeight();
-		
-		System.out.println(width+"---"+height);
+//		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+//		double width = screenSize.getWidth();
+//		double height = screenSize.getHeight();
+//
+//		System.out.println(width+"---"+height);
 		
 		Playwright playwright = Playwright.create();
 		Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-		BrowserContext	browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize((int)width,(int)height));
+		BrowserContext	browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(1260,768));
 		//BrowserContext	browserContext = browser.newContext(new Browser.NewContextOptions().setViewportSize(1260,768));
 		
 		Page page = browser.newPage();
